@@ -10,6 +10,8 @@ keywords = ["io_uring", "http", "linux", "server"]
 categories = ["network-programming"]
 
 [dependencies]
+io-uring = "0.7"
+libc = "0.2"
 
 [profile.release]
 debug = 1
