@@ -65,7 +65,10 @@ fn main() {
         .collect();
     std::thread::sleep(Duration::from_secs(secs));
     stop.store(true, Ordering::Relaxed);
-    let mut lat: Vec<u64> = workers.into_iter().flat_map(|w| w.join().unwrap()).collect();
+    let mut lat: Vec<u64> = workers
+        .into_iter()
+        .flat_map(|w| w.join().unwrap())
+        .collect();
     lat.sort_unstable();
     let n = total.load(Ordering::Relaxed);
     let pct = |p: f64| lat[((lat.len() as f64 - 1.0) * p) as usize] as f64 / 1000.0;
