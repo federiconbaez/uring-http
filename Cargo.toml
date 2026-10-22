@@ -1,0 +1,15 @@
+[package]
+name = "uring-http"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.80"
+license = "Apache-2.0"
+description = "Minimal HTTP/1.1 server on raw io_uring (no async runtime)"
+repository = "https://github.com/federiconbaez/uring-http"
+keywords = ["io_uring", "http", "linux", "server"]
+categories = ["network-programming"]
+
+[dependencies]
+
+[profile.release]
+debug = 1
